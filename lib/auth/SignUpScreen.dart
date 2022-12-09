@@ -37,6 +37,8 @@ class _SignupPageContent extends State<SignupPageContent> {
   bool _isObscure2 = true;
   String returnVisibilityString = "";
 
+  get auth => null;
+
   bool returnVisibility(String password1, String password2, String username) {
     if (password1 != password2) {
       returnVisibilityString = "Passwords do not match";
@@ -157,6 +159,7 @@ class _SignupPageContent extends State<SignupPageContent> {
                       contentPadding: EdgeInsets.all(20)),
                   onEditingComplete: () => FocusScope.of(context).nextFocus(),
                 ),
+                // ignore: prefer_const_constructors
                 Divider(
                   thickness: 3,
                 ),
@@ -226,7 +229,8 @@ class _SignupPageContent extends State<SignupPageContent> {
                 style: ElevatedButton.styleFrom(
                   primary: kbottomContainerColor,
                 ),
-                child: Text("Submit", style: TextStyle(color: Colors.white)),
+                child:
+                    const Text("Submit", style: TextStyle(color: Colors.white)),
                 onPressed: () async {
                   if (kDebugMode) {
                     print(

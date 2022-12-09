@@ -28,6 +28,8 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     };
 
+  get auth => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
