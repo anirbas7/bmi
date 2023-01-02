@@ -1,25 +1,25 @@
-import 'package:bmi/Screens/CalculatorScreen.dart';
-import 'package:bmi/Screens/ProfileScreen.dart';
-import 'package:bmi/Screens/SuggestionScreen.dart';
-import 'package:bmi/auth/SignUpScreen.dart';
-import 'package:bmi/main.dart';
+import 'package:bmi/screens/calculator_screen.dart';
+import 'package:bmi/screens/profile_screen.dart';
+import 'package:bmi/screens/suggestion_screen.dart';
 import 'package:bmi/widgets/constants.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+//erstellt die Navbar und dessen Status
+class NavbarScreen extends StatefulWidget {
+  const NavbarScreen({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _NavbarScreenState createState() => _NavbarScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NavbarScreenState extends State<NavbarScreen> {
   int _selectedTab = 0;
 
-  List _pages = [InputPage(), SuggestionScreen(), ProfilePage()];
+  final List _pages = [
+    const CalculatorScreen(),
+    const SuggestionScreen(),
+    ProfileScreen()
+  ];
 
   _changeTab(int index) {
     setState(() {
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.grid_3x3_outlined), label: "Product"),
+              icon: Icon(Icons.tips_and_updates), label: "Ernährungsberatung"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "About"),
         ],
       ),

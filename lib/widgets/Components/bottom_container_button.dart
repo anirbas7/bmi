@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
+//definiert die Navbar grösse und funktion
 class BottomContainer extends StatelessWidget {
   final String text;
   final VoidCallback? onTap;

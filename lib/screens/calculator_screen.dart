@@ -1,27 +1,29 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../widgets/Components/Icon_Content.dart';
-import '../widgets/Components/Reusable_Bg.dart';
-import '../widgets/Components/RoundIcon_Button.dart';
+import '../widgets/components/icon_content.dart';
+import '../widgets/components/reusable_bg.dart';
+import '../widgets/components/round_icon_button.dart';
 import '../widgets/constants.dart';
-import 'CalculatorResultScreen.dart';
-import '../widgets/Components/BottomContainer_Button.dart';
+import 'calculator_result_screen.dart';
+import '../widgets/components/bottom_container_button.dart';
 import '../helpers/calculator_brain.dart';
 
-// ignore: must_be_immutable
-class InputPage extends StatefulWidget {
+class CalculatorScreen extends StatefulWidget {
+  const CalculatorScreen({super.key});
+
   @override
-  _InputPageState createState() => _InputPageState();
+  _CalculatorScreenState createState() => _CalculatorScreenState();
 }
 
-//ENUMERATION : The action of establishing number of something , implicit way
+//Die Aufzählung legt die Handlung der Zahlen auf implezite Weise fest. (der BMI ist Geschlechtsabhängig)
 enum Gender {
   male,
   female,
 }
 
-class _InputPageState extends State<InputPage> {
+//Generiert den eingabe Screen für die Angaben welche für die BMI-Berechnung benötigt wird.
+//Letzte eingabe sollte im Profile gespeichert sein. (Momentan immer fix auf Mänlich, 180cm, 50kg und 20 Jahre)
+class _CalculatorScreenState extends State<CalculatorScreen> {
   late Gender selectedGender = Gender.male;
   int height = 180;
   int weight = 50;
@@ -46,7 +48,7 @@ class _InputPageState extends State<InputPage> {
                         ? kactiveCardColor
                         : kinactiveCardColor,
                     cardChild: IconContent(
-                        myicon: FontAwesomeIcons.mars, text: 'MALE'),
+                        myicon: FontAwesomeIcons.mars, text: 'Mänlich'),
                   ),
                 ),
               ),
@@ -62,7 +64,7 @@ class _InputPageState extends State<InputPage> {
                         ? kactiveCardColor
                         : kinactiveCardColor,
                     cardChild: IconContent(
-                        myicon: FontAwesomeIcons.venus, text: 'FEMALE'),
+                        myicon: FontAwesomeIcons.venus, text: 'Weiblich'),
                   ),
                 ),
               ),
@@ -75,8 +77,8 @@ class _InputPageState extends State<InputPage> {
             cardChild: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'HEIGHT',
+                const Text(
+                  'Körpergrösse',
                   style: klabelTextStyle,
                 ),
                 Row(
@@ -88,7 +90,7 @@ class _InputPageState extends State<InputPage> {
                       height.toString(),
                       style: kDigitTextStyle,
                     ),
-                    Text(
+                    const Text(
                       'cm',
                       style: klabelTextStyle,
                     ),
@@ -98,10 +100,12 @@ class _InputPageState extends State<InputPage> {
                   data: SliderTheme.of(context).copyWith(
                     activeTrackColor: Colors.white,
                     inactiveTrackColor: ksliderInactiveColor,
-                    thumbColor: Color(0xFFEB1555),
-                    overlayColor: Color(0x29EB1555),
-                    thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
-                    overlayShape: RoundSliderOverlayShape(overlayRadius: 35.0),
+                    thumbColor: const Color(0xFFEB1555),
+                    overlayColor: const Color(0x29EB1555),
+                    thumbShape:
+                        const RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                    overlayShape:
+                        const RoundSliderOverlayShape(overlayRadius: 35.0),
                   ),
                   child: Slider(
                     value: height.toDouble(),
@@ -127,8 +131,8 @@ class _InputPageState extends State<InputPage> {
                   cardChild: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'WEIGHT',
+                      const Text(
+                        'Gewicht',
                         style: klabelTextStyle,
                       ),
                       Text(
@@ -146,7 +150,7 @@ class _InputPageState extends State<InputPage> {
                               });
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 15.0,
                           ),
                           RoundIconButton(
@@ -169,8 +173,8 @@ class _InputPageState extends State<InputPage> {
                   cardChild: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'AGE',
+                      const Text(
+                        'Alter',
                         style: klabelTextStyle,
                       ),
                       Text(
@@ -188,7 +192,7 @@ class _InputPageState extends State<InputPage> {
                               });
                             },
                           ),
-                          SizedBox(width: 15.0),
+                          const SizedBox(width: 15.0),
                           RoundIconButton(
                             icon: FontAwesomeIcons.plus,
                             onPressed: () {
@@ -206,11 +210,11 @@ class _InputPageState extends State<InputPage> {
             ],
           ),
         ),
+        //Startet die BMI-Berechnung und giebt die Resultate aus
         BottomContainer(
-          text: 'CALCULATE',
+          text: 'Berechnen',
           onTap: () {
             Calculate calc = Calculate(height: height, weight: weight);
-
             Navigator.push(
               context,
               MaterialPageRoute(

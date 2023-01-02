@@ -1,10 +1,9 @@
-import 'package:bmi/Screens/RecipeDetailScreen.dart';
+import 'package:bmi/screens/recipe_detail_screen.dart';
 import 'package:bmi/widgets/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/widgets.dart';
 
+//dieser Screen zeigt mögliche Ernährungstipps. Mit Kalorien und möglichen Rezepten für das gericht.
+//momentan zur Testtexte als Idee
 class SuggestionScreen extends StatefulWidget {
   const SuggestionScreen({super.key});
 
@@ -21,7 +20,7 @@ class _SuggestionScreenState extends State<SuggestionScreen> {
           margin: EdgeInsets.fromLTRB(5, 20, 5, 0),
           child: Center(
             child: Text(
-              'Suggestion Screen',
+              'Ernährungsberater',
               style: TextStyle(
                   fontSize: 40.0,
                   fontWeight: FontWeight.bold,
@@ -95,40 +94,13 @@ class _SuggestionScreenState extends State<SuggestionScreen> {
           'Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising them in comparison to animals such as cattle or hogs, chickens have become prevalent throughout the cuisine of cultures around the world, and their meat has been variously adapted to regional tastes.',
     },
     {
-      'id': 1,
-      'name': 'Chicken',
+      'id': 2,
+      'name': 'Lasagne',
       'calories': 200,
       'image':
-          'https://assets.bonappetit.com/photos/62f5674caf9bae430097be0f/5:4/w_2325,h_1860,c_limit/0810-no-fail-roast-chicken-v2.jpg',
+          'https://files.cleverleben.at/clever_downloads/recipes/Recipe_316.jpg',
       'description':
-          'Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising them in comparison to animals such as cattle or hogs, chickens have become prevalent throughout the cuisine of cultures around the world, and their meat has been variously adapted to regional tastes.',
-    },
-    {
-      'id': 1,
-      'name': 'Chicken',
-      'calories': 200,
-      'image':
-          'https://assets.bonappetit.com/photos/62f5674caf9bae430097be0f/5:4/w_2325,h_1860,c_limit/0810-no-fail-roast-chicken-v2.jpg',
-      'description':
-          'Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising them in comparison to animals such as cattle or hogs, chickens have become prevalent throughout the cuisine of cultures around the world, and their meat has been variously adapted to regional tastes.',
-    },
-    {
-      'id': 1,
-      'name': 'Chicken',
-      'calories': 200,
-      'image':
-          'https://assets.bonappetit.com/photos/62f5674caf9bae430097be0f/5:4/w_2325,h_1860,c_limit/0810-no-fail-roast-chicken-v2.jpg',
-      'description':
-          'Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising them in comparison to animals such as cattle or hogs, chickens have become prevalent throughout the cuisine of cultures around the world, and their meat has been variously adapted to regional tastes.',
-    },
-    {
-      'id': 1,
-      'name': 'Chicken',
-      'calories': 200,
-      'image':
-          'https://assets.bonappetit.com/photos/62f5674caf9bae430097be0f/5:4/w_2325,h_1860,c_limit/0810-no-fail-roast-chicken-v2.jpg',
-      'description':
-          'Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising them in comparison to animals such as cattle or hogs, chickens have become prevalent throughout the cuisine of cultures around the world, and their meat has been variously adapted to regional tastes.',
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     },
   ];
 }

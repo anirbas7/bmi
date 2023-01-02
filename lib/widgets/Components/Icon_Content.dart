@@ -4,13 +4,13 @@ import '../constants.dart';
 const sizedBox = SizedBox(
   height: 15.0,
 );
-
+//definiert die Icons
 const iconSize = 80.0;
 
 class IconContent extends StatelessWidget {
   final IconData myicon;
   final String text;
-  IconContent({required this.myicon, required this.text});
+  const IconContent({super.key, required this.myicon, required this.text});
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -1,8 +1,7 @@
-import 'package:bmi/widgets/Components/BottomContainer_Button.dart';
+import 'package:bmi/widgets/components/bottom_container_button.dart';
 import 'package:bmi/widgets/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../widgets/Components/Reusable_Bg.dart';
+import '../widgets/components/reusable_bg.dart';
 
 class ResultPage extends StatelessWidget {
   final String resultText;
@@ -10,19 +9,22 @@ class ResultPage extends StatelessWidget {
   final String advise;
   final Color textColor;
 
+//wurde von Visual Studio selbst kommentiert
+  // ignore: prefer_const_constructors_in_immutables
   ResultPage(
       {required this.textColor,
       required this.resultText,
       required this.bmi,
       required this.advise});
 
+//gibt das Resultat der Rechnung aus inklusive einen Tip und in welcher Range der optimale BMI sich befinden sollte
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: kactiveCardColor,
-        title: Text('Your Result'),
+        title: Text('Dein Resultat'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,12 +56,12 @@ class ResultPage extends StatelessWidget {
                   ),
                   Text(
                     '18.5 - 25 kg/m2',
-                    style: kBodyTextStyle,
+                    style: klabelTextStyle,
                   ),
                   Text(
                     advise,
                     textAlign: TextAlign.center,
-                    style: kBodyTextStyle,
+                    style: klabelTextStyle,
                   ),
                   SizedBox(
                     height: 15.0,
@@ -75,7 +77,8 @@ class ResultPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)),
                     child: Text(
-                      'SAVE RESULT',
+                      //speicherfunktion vorgesehen funktioniert momentan nicht
+                      'Resultat speichern',
                       style: kBodyTextStyle,
                     ),
                   ),
@@ -84,7 +87,7 @@ class ResultPage extends StatelessWidget {
             ),
           ),
           BottomContainer(
-              text: 'RE-CALCULATE',
+              text: 'Erneut Berechnen',
               onTap: () {
                 Navigator.pop(context);
               }),

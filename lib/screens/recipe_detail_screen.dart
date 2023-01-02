@@ -1,9 +1,8 @@
 import 'package:bmi/widgets/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
+//voller Text zu den ERnährungstips.
+// Momentan ebenfalls nur Testtexte und bilder
 class RecipeDetailScreen extends StatefulWidget {
   const RecipeDetailScreen({super.key, this.recipe});
   final recipe;

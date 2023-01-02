@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Design für die BMI-App die immer übertragen wird
 const kactiveCardColor = Color(0xFF1D1E33);
 const kinactiveCardColor = Color(0xFF111328);
 const ksliderInactiveColor = Color(0xFF8D8E98);
